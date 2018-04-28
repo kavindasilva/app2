@@ -10,18 +10,21 @@ var users = require('./routes/users');
 
 var app = express();
 
+//require('./dbcon');
+//-------------------------------------- mysql con-----
+/*
 var mysql = require('mysql');
-
 var con = mysql.createConnection({
   host: "127.0.0.1",
   user: "ks",
-  password: "1"
+  password: "1",
+  database: "k1"
 });
-
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-});
+});*/
+//------------------------------------------------------
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

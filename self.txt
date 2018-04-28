@@ -1,0 +1,13 @@
+
+npm start
+no need to restart when changing jade files
+needs to restart when changing ks files
+
+as return router =>
+module.exports = router;
+
+P data1[1].Name =>
+data1[1].Name
+
+p #{data1[0].Name}
+actual_value

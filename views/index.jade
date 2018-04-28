@@ -3,3 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p ks static para
+  //p data1
+  //p=title
+  p data1[1].Name
+
+  p #{data1[0].Name}
+  p for(i=0;i<3;i++){data1[0].Name}
+  ul
+  each val in data1
+    each val2 in val
+      li= val2
