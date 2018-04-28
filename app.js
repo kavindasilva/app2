@@ -13,9 +13,9 @@ var app = express();
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
+  host: "127.0.0.1",
+  user: "ks",
+  password: "1"
 });
 
 con.connect(function(err) {
