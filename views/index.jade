@@ -14,3 +14,18 @@ block content
   each val in data1
     each val2 in val
       li= val2
+  hr
+
+
+  table(border=1)
+    //tr
+    each val3 in data1
+      tr
+      td= val3.roll_no
+      td=val3.Name
+  
+
+  hr
+  ul
+  each val in data1
+   li=val.Name

@@ -43,5 +43,19 @@ router.get('/ab', function(req, res, next) {
 	//res.render('index', { title: 'Express', data1:result });
 });
 
+router.get('/ins', function(req, res, next) {
+  
+	var con=require('../dbcon');
+
+	//var sql = "INSERT INTO stud (name, address) VALUES ('Company Inc', 'Highway 37')";
+	var sql = "INSERT INTO stud VALUES ( 00,'node test data')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+
+res.send('insert window');
+});
+
 
 module.exports = router;
