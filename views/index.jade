@@ -6,26 +6,32 @@ block content
   p ks static para
   //p data1
   //p=title
-  p data1[1].Name
+  //p data1[1].Name
 
-  p #{data1[0].Name}
-  p for(i=0;i<3;i++){data1[0].Name}
+  //p #{data1[0].Name}
+  //p for(i=0;i<3;i++){data1[0].Name}
   ul
   each val in data1
     each val2 in val
       li= val2
   hr
-
+  a(href='/users/ins')
+    button(name='ins2')
+      insert new static data
+  hr
 
   table(border=1)
     //tr
     each val3 in data1
-      tr
-      td= val3.roll_no
-      td=val3.Name
-  
+      form(method='post' action='/users/del')
+        tr
+          input(type='text' hidden value=val3.roll_no name='Rid')
+          td= val3.roll_no
+          td=val3.Name
+          td
+            input(type='submit' name='delet' value="DEL")
 
   hr
   ul
   each val in data1
-   li=val.Name
+    //li= val.Name

@@ -43,6 +43,23 @@ router.get('/ab', function(req, res, next) {
 	//res.render('index', { title: 'Express', data1:result });
 });
 
+router.post('/del', function(req, res, next) {
+	var con=require('../dbcon');
+
+	var id=req.body.Rid;
+
+	var sql = "delete from stud where roll_no="+id+";";
+	//var sql = "INSERT INTO stud VALUES ( 00,'node test data')";
+
+	con.query(sql, function(err, result) {
+		if (err) throw err;
+		console.log("1 record deleted");
+	});
+/**/
+	//res.send('delete window');
+	res.render('ins1', { title: 'ks-insert', data2:id});
+});
+
 router.get('/ins', function(req, res, next) {
   
 	var con=require('../dbcon');
