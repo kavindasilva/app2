@@ -1,5 +1,7 @@
 extends layout
 
+// http://jade-lang.com/reference/conditionals
+
 block content
   h1= title
   p Welcome to #{title}
@@ -10,10 +12,12 @@ block content
 
   //p #{data1[0].Name}
   //p for(i=0;i<3;i++){data1[0].Name}
-  ul
-  each val in data1
-    each val2 in val
-      li= val2
+
+  if(data1)
+    ul
+    each val in data1
+      each val2 in val
+        li= val2
   hr
   a(href='/users/ins')
     button(name='ins2')

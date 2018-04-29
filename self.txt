@@ -1,4 +1,7 @@
 
+reference
+http://jade-lang.com/reference/conditionals
+
 npm start
 no need to restart when changing jade files
 needs to restart when changing ks files
@@ -11,3 +14,11 @@ data1[1].Name
 
 p #{data1[0].Name}
 actual_value
+
+$_POST['Rid'] =>
+var id=req.body.Rid;
+
+redirect =>
+res.redirect('../index');
+
+

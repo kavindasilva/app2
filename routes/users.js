@@ -27,7 +27,7 @@ router.get('/ab', function(req, res, next) {
     	if (err) throw err;
     	console.log(result);
 
-    	res.render('index', { title: 'Express', data1:result});
+    	res.render('index', { title: 'Express-view data', data1:result});
     	//res.render('index', { title: 'Express', data1:result });
 	});
 
@@ -57,7 +57,7 @@ router.post('/del', function(req, res, next) {
 	});
 /**/
 	//res.send('delete window');
-	res.render('ins1', { title: 'ks-insert', data2:id});
+	res.render('ins1', { title: 'ks-delete', data2:id});
 });
 
 router.get('/ins', function(req, res, next) {
@@ -65,13 +65,22 @@ router.get('/ins', function(req, res, next) {
 	var con=require('../dbcon');
 
 	//var sql = "INSERT INTO stud (name, address) VALUES ('Company Inc', 'Highway 37')";
-	var sql = "INSERT INTO stud VALUES ( 00,'node test data')";
+	var sql = "INSERT INTO studd VALUES ( 00,'node test data')";
   con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
+    //if (err) throw err;
+    if(err){
+    	console.log(err);
+    	res.render('error', {message: err.code, error:err});
+    	//res.red
+    }
+    else{
+    	console.log("1 record inserted");
+    	res.redirect('../index');
+	}
   });
 
-res.send('insert window');
+//res.send('insert window');
+//res.redirect('../index');
 });
 
 

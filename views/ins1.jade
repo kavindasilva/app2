@@ -1,4 +1,5 @@
 extends layout
+// http://jade-lang.com/reference/conditionals
 
 block content
   h1= title
@@ -8,3 +9,6 @@ block content
   //p=title
   p data1[1].Name
   p=data2
+
+  a(href='javascript.history(1-)')
+    'go back'
