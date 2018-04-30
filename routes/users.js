@@ -1,6 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+
+/** custom function to output errors */
+globeError = function(errdata, res0){
+	console.log(errdata);
+	res0.render('error', {message: errdata.code, error:errdata});
+	return;
+}; 
+
 //require('../dbcon');
 
 /* GET users listing. */
@@ -68,11 +76,12 @@ router.get('/ins', function(req, res, next) {
 	var sql = "INSERT INTO studd VALUES ( 00,'node test data')";
   con.query(sql, function (err, result) {
     //if (err) throw err;
-    if(err){
+    /*if(err){
     	console.log(err);
     	res.render('error', {message: err.code, error:err});
     	//res.red
-    }
+    }*/
+    if(err) globeError(err, res); 
     else{
     	console.log("1 record inserted");
     	res.redirect('../index');
